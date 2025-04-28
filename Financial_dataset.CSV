@@ -1,0 +1,76 @@
+import pandas as pd
+import numpy as np
+import random
+
+# Set seed for reproducibility
+np.random.seed(42)
+
+# Number of rows
+num_rows = 50000
+
+# Product options
+products = ['Honda Activa', 'Yamaha', 'TVS Jupiter']
+product_ids = [1001, 1002, 1003]
+
+# Generate data
+data = []
+for i in range(num_rows):
+    choice = random.choice([0, 1, 2])
+    product_id = product_ids[choice]
+    product_name = products[choice]
+
+    # Generate prices
+    if product_name in ['Honda Activa', 'Yamaha']:
+        actual_price = np.random.randint(70000, 90000)
+        selling_price = actual_price + np.random.randint(2000, 10000)
+    else:  # TVS Jupiter has loss
+        actual_price = np.random.randint(65000, 80000)
+        selling_price = actual_price - np.random.randint(3000, 10000)
+
+    data.append([product_id, product_name, actual_price, selling_price])
+
+# Create DataFrame
+df = pd.DataFrame(data, columns=['Product_ID', 'Product_Name', 'Actual_Price', 'Selling_Price'])
+
+# Save to CSV
+df.to_csv("financial_dataset.csv", index=False)
+
+print("Dataset created with import pandas as pd
+import numpy as np
+import random
+
+# Set seed for reproducibility
+np.random.seed(42)
+
+# Number of rows
+num_rows = 50000
+
+# Product options
+products = ['Honda Activa', 'Yamaha', 'TVS Jupiter']
+product_ids = [1001, 1002, 1003]
+
+# Generate data
+data = []
+for i in range(num_rows):
+    choice = random.choice([0, 1, 2])
+    product_id = product_ids[choice]
+    product_name = products[choice]
+
+    # Generate prices
+    if product_name in ['Honda Activa', 'Yamaha']:
+        actual_price = np.random.randint(70000, 90000)
+        selling_price = actual_price + np.random.randint(2000, 10000)
+    else:  # TVS Jupiter has loss
+        actual_price = np.random.randint(65000, 80000)
+        selling_price = actual_price - np.random.randint(3000, 10000)
+
+    data.append([product_id, product_name, actual_price, selling_price])
+
+# Create DataFrame
+df = pd.DataFrame(data, columns=['Product_ID', 'Product_Name', 'Actual_Price', 'Selling_Price'])
+
+# Save to CSV
+df.to_csv("financial_dataset.csv", index=False)
+
+print("Dataset created with 50,000 rows and saved as financial_dataset.csv")
+50,000 rows and saved as financial_dataset.csv")
